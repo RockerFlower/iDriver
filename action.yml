@@ -1,0 +1,28 @@
+name: 'iDriver'
+description: 'The action to upload file to Google Drive'
+inputs:
+  filePath:
+    description: 'APK file'
+    required: true
+    default: ''
+  keyPath:
+    description: 'Key file path'
+    required: true
+    default: ''
+  destID:
+    description: 'Dest ID'
+    required: true
+    default: ''
+outputs:
+  fileID:
+    description: 'The ID of file in Google Drive'
+runs:
+  using: 'docker'
+  image: 'Dockerfile'
+  args:
+    - ${{ inputs.filePath }}
+    - ${{ inputs.keyPath }}
+    - ${{ inputs.destID }}
+branding:
+  icon: 'hard-drive'  
+  color: 'blue'
