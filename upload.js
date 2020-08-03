@@ -23,6 +23,9 @@ const drive = google.drive('v3');
 
 async function runDriver(filePath, keyPath, destID) {
 
+    console.log('filePath: ' + filePath);
+    console.log('keyPath: ' + keyPath);
+    console.log('destID: ' + destID);
 
     const auth = new google.auth.GoogleAuth({
         keyFile: keyPath,
